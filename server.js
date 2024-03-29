@@ -85,6 +85,9 @@ const app = express();
 // db use (mongoose)
 const db = require("./db");
 
+// dotenv
+require('dotenv').config();
+
 // use body-parser
 // const bodyParser = require('body-parser');
 // app.use(bodyParser.json());
@@ -99,4 +102,7 @@ const menuItemsRoutes = require('./ROUTES/menuitemsRoutes');
 app.use('/person', personRoutes);
 app.use('/menu', menuItemsRoutes)
 
-app.listen(3000); // port
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT); // port
